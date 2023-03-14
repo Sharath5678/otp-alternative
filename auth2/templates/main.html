@@ -1,0 +1,37 @@
+{% extends 'base.html' %}
+
+{% block content %}
+
+{% load static%}
+<!DOCTYPE html>
+<!--Code by Divinector (www.divinectorweb.com)-->
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title></title>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600;700;900&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="{% static 'index.css' %}">  
+</head>
+    
+<body>
+    <header>
+    <div class="wrapper">
+<ul class="nav-area">
+{% if user.is_authenticated %}
+<li><a href='logout'>Logout</a></li>
+{%else%}
+<li><a href='login'>Login/Signup</a></li>
+{%endif%}
+<li><a href='aboutus'>About Us</a></li>
+</ul>
+</div>
+<div class="welcome-text">
+        <h1><span>HI {{request.user}}</span></h1>
+    <a href="ProductList">Shop now</a>
+    </div>
+</header>
+
+</body>
+</html>
+
+{% endblock content %}

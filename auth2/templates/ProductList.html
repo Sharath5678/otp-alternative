@@ -1,0 +1,36 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>SSRR Travels</title>
+    <!-- Main StyleSheet -->
+    <link rel="stylesheet" href="{% static 'ProductList.css' %}">
+</head>
+
+<body>
+    <div>
+    <!-- Brand -->
+    <h1 id="brand">Shopers </h1>   
+    <!-- Main Content --> 
+    <div class="content">
+        {% for p in prod  %}
+        <div class="product">
+            <a href='order/{{p.Name}}'>
+                <img src="static/{{p.Image}}">
+               <h2> {{p.Name}} </h2>
+                <p> {{p.Description}} </p><br>
+            <div class="destination_price"> Price: {{p.Price}} </div>
+            </a>
+        </div>
+        {%endfor%}
+
+              </a>
+        </div>
+
+    </div>
+</body>
+
+</html>
